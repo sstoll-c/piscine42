@@ -1,0 +1,6 @@
+Credentials cache: API:A5FCCAB4-5685-4CD5-8EAA-AC0D6FC039B4
+        Principal: sstoll-c@42.FR
+
+  Issued                Expires               Principal
+Jun 28 16:24:57 2021  Jul  5 16:24:57 2021  krbtgt/42.FR@42.FR
+Jun 28 16:24:58 2021  Jul  5 16:24:57 2021  HTTP/student-storage-2.42.fr@42.FR

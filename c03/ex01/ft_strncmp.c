@@ -6,7 +6,7 @@
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:22:01 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/18 20:15:04 by sstoll-c         ###   ########.fr       */
+/*   Updated: 2021/07/19 15:17:23 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (0);
 }

@@ -6,44 +6,56 @@
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:03:48 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/12 22:32:41 by sstoll-c         ###   ########.fr       */
+/*   Updated: 2021/07/19 12:16:23 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_check(char c)
-{
-	if (c > ' ' && c <= '~')
-		return (1);
-	else
-		return (0);
-}
+#include <stdio.h>
 
-int	is_alpha(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else
-		return (0);
-}
-
-char	*ft_strcapitalize(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (!(ft_check(str[i - 1])) && is_alpha(str[i]))
-			str[i] -= 32;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			str[i] = str[i] + 32;
+		}
 		i++;
 	}
 	return (str);
 }
-
-int	main(void)
+char	ft_strcapitalize(char *str)
 {
-	char	tab[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	ft_strcapitalize(tab);
+	int		i;
+	int		chat;
 
-	printf("%s", tab);
+	i = 0;
+	chat = 1;
+	str = ft_strlowcase(str);
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z') && chat == 1)
+		{	
+			str[i] = str[i] - 32;
+			chat = 0;
+		}
+		else if ((str[i] >= 'a' && str[i] <= 'z') 
+			|| (str[i] >= '0' && str[i] <= '9'))
+			chat = 0;
+		else
+			chat = 1;
+		i++;
+	}
+	return (*str);
+}
+
+int		main()
+{
+	char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	
+	ft_strcapitalize(str);
+	printf("%s", str);
 }

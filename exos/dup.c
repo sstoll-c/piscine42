@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   dup.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 14:20:37 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/20 10:38:18 by sstoll-c         ###   ########.fr       */
+/*   Created: 2021/07/20 15:42:36 by sstoll-c          #+#    #+#             */
+/*   Updated: 2021/07/20 15:43:46 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+char	*ft_strdup(char *src)
 {
-	write(1, &c, 1);
+	char	*dup;
+	int	i;
+
+	i = 0;
+	dup = (char *)malloc(sizeof(char) * strlen(src));
+	if (dup)
+	{
+		while (src[i])
+		{
+			dup[i] = src[i];
+			i++;
+		}
+	}
+	dup[i] = '\0';
+	return (dup);
 }
 
-void	ft_putnbr(int nb)
+int	main(void)
 {
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-		ft_putnbr(nb);
-	}
-	else if (nb >= 0 && nb <= 9 )
-	{
-		ft_putchar(nb + '0');
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	char *s = "Hello World";
+	char *p =ft_strdup(s);
+	printf("%s\n", p);
+	return (0);
 }
+

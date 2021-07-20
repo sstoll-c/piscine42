@@ -6,7 +6,7 @@
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:03:48 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/19 12:16:23 by sstoll-c         ###   ########.fr       */
+/*   Updated: 2021/07/19 15:14:04 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,29 @@ char	*ft_strlowcase(char *str)
 	}
 	return (str);
 }
-char	ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int		i;
-	int		chat;
+	int		bol;
 
 	i = 0;
-	chat = 1;
+	bol = 1;
 	str = ft_strlowcase(str);
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') && chat == 1)
+		if ((str[i] >= 'a' && str[i] <= 'z') && bol == 1)
 		{	
 			str[i] = str[i] - 32;
-			chat = 0;
+			bol = 0;
 		}
 		else if ((str[i] >= 'a' && str[i] <= 'z') 
 			|| (str[i] >= '0' && str[i] <= '9'))
-			chat = 0;
+			bol = 0;
 		else
-			chat = 1;
+			bol = 1;
 		i++;
 	}
-	return (*str);
+	return (str);
 }
 
 int		main()

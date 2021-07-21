@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 17:52:58 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/21 18:46:56 by sstoll-c         ###   ########.fr       */
+/*   Created: 2021/07/21 15:12:17 by sstoll-c          #+#    #+#             */
+/*   Updated: 2021/07/21 15:16:41 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+char	*ft_strjoin(int size,char **strs, char *sep)
 {
-	if (nb < 0)
-		return (0);
-	if (nb >= 1)
-		return (nb * ft_recursive_factorial(nb - 1));
-	return (1);
+	
 }

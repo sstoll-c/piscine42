@@ -1,20 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 17:52:58 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/21 18:46:56 by sstoll-c         ###   ########.fr       */
+/*   Created: 2021/07/21 11:44:59 by sstoll-c          #+#    #+#             */
+/*   Updated: 2021/07/21 14:13:25 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+#include <stdlib.h>
+
+int	ft_strlen(char *src)
 {
-	if (nb < 0)
-		return (0);
-	if (nb >= 1)
-		return (nb * ft_recursive_factorial(nb - 1));
-	return (1);
+	int	i;
+
+	i = 0;
+	while (src[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+	int	i;
+
+	i = 0;
+	dest = malloc(sizeof(char) * ft_strlen(src) + 1);
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;	
+	}
+	dest[i] = 0;
+	return (dest);
+}
+int main(void)
+{
+	char *s = "hello world";
+	char *p = ft_strdup(s);
+	printf("%s\n", p);
+	return (0);
 }

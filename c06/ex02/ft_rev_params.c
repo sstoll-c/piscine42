@@ -6,7 +6,7 @@
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 11:47:37 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/17 12:04:15 by sstoll-c         ###   ########.fr       */
+/*   Updated: 2021/07/21 11:38:24 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putchar(char c)
 {
-	write( 1, &c, 1);
+	write(1, &c, 1);
 }
 
-int	main (int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	int	i;
 	int	j;

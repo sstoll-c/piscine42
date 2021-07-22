@@ -6,7 +6,7 @@
 /*   By: sstoll-c <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 10:39:44 by sstoll-c          #+#    #+#             */
-/*   Updated: 2021/07/21 11:37:06 by sstoll-c         ###   ########.fr       */
+/*   Updated: 2021/07/22 12:16:28 by sstoll-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_putstr(char *str)
 
 int	main(int argc, char **argv)
 {
+	(void) argc;
 	ft_putstr(argv[0]);
 	ft_putchar('\n');
 }

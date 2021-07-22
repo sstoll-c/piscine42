@@ -37,17 +37,17 @@ int	word_count(char *str, char *charset)
 
 char	*ft_cut(int *i, char *str, int size)
 {
-	int		j;
+	int		k;
 	char	*tab;
 
-	tab = malloc(sizeof(char) * size + 1);
+	tab = malloc(sizeof(char) * (size + 1));
 	if (!tab)
 		return (NULL);
-	j = 0;
-	while (j < size)
+	k = 0;
+	while (k < size)
 	{
-		tab[j] = str[*i];
-		j++;
+		tab[k] = str[*i];
+		k++;
 		*i = *i + 1;
 	}
 	tab[size] = '\0';
@@ -71,10 +71,10 @@ char	**ft_split(char *str, char *charset)
 	{
 		if (is_in_charset(str[i], charset) == 0 && str[i])
 		{
-			j = 0;
-			while (is_in_charset(str[i + j], charset) == 0 && str[i + j])
+			j = i;
+			while (is_in_charset(str[i], charset) == 0 && str[i])
 				j++;
-			result[l] = ft_cut(&i, str, j);
+			result[l] = ft_cut(&i, str, j - i);
 			l++;
 		}
 		else
